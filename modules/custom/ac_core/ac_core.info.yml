@@ -1,0 +1,8 @@
+name: AGEUP Conferencia Core
+type: module
+description: Any customization to AC
+package: Custom
+core_version_requirement: ^8 || ^9
+
+libraries:
+  - ac_core/global-styling

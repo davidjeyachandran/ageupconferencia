@@ -1,0 +1,78 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\UserInterface;
+use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\user\Entity\User;
+use Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_page_attachments().
+ */
+function ac_core_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'ac_core/general';
+}
+
+/**
+ * @file
+ * Customization for user login, registration and more.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function ac_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  if ($form_id === 'user_register_form') {
+    $form['account']['mail']['#description'] = t("Una dirección de correo electrónico válida.");
+    $form['account']['name']['#title'] = t('Apellidos');
+    $form['account']['name']['#description'] = t("Apellidos - importante para tu certificado");
+
+  }
+
+  if ($form_id === 'user_login_form') {
+
+    }
+  
+
+  if($form_id === 'user_form') {
+
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ */
+// function ac_core_user_insert(UserInterface $user) {
+//   // Assign "Cédula de Identidad o DNI" as the password.
+//   if (!is_staff_user($user)) {
+//     $user->pass->value = $user->label();
+//     $user->save();
+//   }
+// }
+
+/**
+ * Valitation callback for ac_core_form_alter().
+ */
+// function ac_core_user_login_validate_pass(array $form, FormStateInterface $form_state) {
+//   $name = $form_state->getValue('name');
+
+//   // Fix for users: sets password to username is user is not staff.
+//   // @TODO: replace in future with more robust functionality.
+//   $users = \Drupal::entityTypeManager()
+//     ->getStorage('user')
+//     ->loadByProperties([
+//       'name' => $name,
+//     ]);
+
+//   $user = $users ? reset($users) : FALSE;
+//   if ($user && !is_staff_user($user)) {
+//     $user
+//       ->set('pass', $name)
+//       ->save();
+
+//     $form_state->setValue('pass', $name);
+//   }
+
+// }
