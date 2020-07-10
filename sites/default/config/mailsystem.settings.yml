@@ -1,0 +1,12 @@
+theme: current
+defaults:
+  sender: mailgun_mail
+  formatter: mailgun_mail
+_core:
+  default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
+langcode: es
+modules:
+  mailgun:
+    none:
+      formatter: mailgun_mail
+      sender: mailgun_mail

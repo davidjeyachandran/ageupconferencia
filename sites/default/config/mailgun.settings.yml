@@ -1,0 +1,15 @@
+api_endpoint: 'https://api.mailgun.net'
+api_key: key-f6b52f3ff95321992d9964d019e8ab2f
+working_domain: mg.eforsur.tk
+debug_mode: false
+test_mode: true
+tracking_opens: ''
+tracking_clicks: ''
+tracking_exception: 'user:password_reset'
+format_filter: plain_text
+use_queue: false
+use_theme: false
+tagging_mailkey: true
+_core:
+  default_config_hash: LvfoMWPVBV3_b20wBXtGDiT_Mu3pqaAR6wX8E5NfuH0
+langcode: es
