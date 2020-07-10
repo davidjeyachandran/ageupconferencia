@@ -25,6 +25,7 @@
         "drupal/mail_login": "^2.2",
         "drupal/mailgun": "^1.0@RC",
         "drupal/olivero": "^1.0@alpha",
+        "drupal/redirect_after_login": "^2.6",
         "drupal/simple_fb_connect": "^3.1",
         "drush/drush": "^10.3"
     },
