@@ -25,6 +25,7 @@ function ac_core_page_attachments(array &$page) {
 function ac_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
   if ($form_id === 'user_register_form') {
+    $form['account']['name']['#weight'] = ($weight -= 2);
     $form['account']['mail']['#description'] = t("Una dirección de correo electrónico válida.");
     $form['account']['name']['#title'] = t('Apellidos');
     $form['account']['name']['#description'] = t("Apellidos - importante para tu certificado");
