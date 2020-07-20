@@ -5,9 +5,3 @@ defaults:
 _core:
   default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
 langcode: es
-modules:
-  mailgun:
-    none:
-      formatter: mailgun_mail
-      sender: mailgun_mail
-
