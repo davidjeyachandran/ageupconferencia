@@ -1,0 +1,20 @@
+uuid: 412f4505-cbda-4a51-b595-c770724be1fb
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - olivero
+id: contenidoprincipaldelapagina
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenido principal de la página'
+  provider: system
+  label_display: '0'
+visibility: {  }

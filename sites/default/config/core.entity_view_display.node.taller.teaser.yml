@@ -1,0 +1,35 @@
+uuid: fc018ab8-c9b6-48f2-b851-a6e2c3bce838
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.taller.body
+    - field.field.node.taller.field_ordenar
+    - field.field.node.taller.field_ponente
+    - node.type.taller
+  module:
+    - text
+    - user
+id: node.taller.teaser
+targetEntityType: node
+bundle: taller
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_ordenar: true
+  field_ponente: true
+  langcode: true

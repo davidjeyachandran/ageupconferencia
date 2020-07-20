@@ -1,0 +1,48 @@
+uuid: 4d26ac13-f167-497d-bc6a-4b26c329ad93
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.taller.body
+    - field.field.node.taller.field_ordenar
+    - field.field.node.taller.field_ponente
+    - node.type.taller
+  module:
+    - text
+    - user
+id: node.taller.default
+targetEntityType: node
+bundle: taller
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_ordenar:
+    weight: 103
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_ponente:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

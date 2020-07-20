@@ -1,0 +1,20 @@
+uuid: 1fbb93b0-14ec-4714-b6a6-5138c46822dc
+langcode: es
+status: true
+dependencies:
+  theme:
+    - olivero
+id: pestanas
+theme: olivero
+region: content
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Pestañas
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

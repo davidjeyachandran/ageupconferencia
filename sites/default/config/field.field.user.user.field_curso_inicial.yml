@@ -1,0 +1,24 @@
+uuid: f42203c7-6885-4438-a84e-80abc303561e
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_curso_inicial
+  module:
+    - user
+id: user.user.field_curso_inicial
+field_name: field_curso_inicial
+entity_type: user
+bundle: user
+label: 'Año que asistió a un Curso Inicial'
+description: 'por ejemplo: 2019'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

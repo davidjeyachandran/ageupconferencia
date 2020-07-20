@@ -1,0 +1,18 @@
+uuid: cb07d03d-0fd4-4dd8-91af-80089c2e290f
+langcode: es
+status: true
+dependencies:
+  theme:
+    - olivero
+id: titulodelapagina
+theme: olivero
+region: content
+weight: -3
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Título de la página'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,21 @@
+uuid: a45ce7b0-b0a9-434d-bf1f-ffc88ed395bc
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_taller_1
+  module:
+    - options
+    - user
+id: user.user.field_taller_1
+field_name: field_taller_1
+entity_type: user
+bundle: user
+label: 'Taller 1'
+description: 'Elige el primer taller de 2:30pm a 4:00pm'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

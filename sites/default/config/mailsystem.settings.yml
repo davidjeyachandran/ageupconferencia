@@ -10,3 +10,4 @@ modules:
     none:
       formatter: mailgun_mail
       sender: mailgun_mail
+

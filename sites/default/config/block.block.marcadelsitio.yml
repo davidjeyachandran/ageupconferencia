@@ -1,0 +1,23 @@
+uuid: e9bc8c63-e787-4953-be18-2c056d55ed3d
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - olivero
+id: marcadelsitio
+theme: olivero
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Marca del sitio'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

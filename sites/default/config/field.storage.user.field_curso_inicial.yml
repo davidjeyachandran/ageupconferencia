@@ -1,0 +1,20 @@
+uuid: 3bfe82a2-6efd-48d4-9365-dcd62af20297
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_curso_inicial
+field_name: field_curso_inicial
+entity_type: user
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

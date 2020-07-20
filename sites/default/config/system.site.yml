@@ -1,0 +1,15 @@
+uuid: cca9647c-3aee-4262-9d51-1b8b74856117
+name: 'AGEUP EFOR Sur'
+mail: davidjeyachandran@gmail.com
+slogan: 'Encuentro de Formación Regional Sur'
+page:
+  403: ''
+  404: ''
+  front: /node/11
+admin_compact_mode: false
+weight_select_max: 100
+langcode: es
+default_langcode: es
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+mail_notification: davidjeyachandran@gmail.com

@@ -1,0 +1,21 @@
+uuid: 95ec5319-3477-4b60-b6c3-460f75797442
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_magistral
+  module:
+    - options
+    - user
+id: user.user.field_magistral
+field_name: field_magistral
+entity_type: user
+bundle: user
+label: '¿Solo asistiré a la conferencia Magistral con Mag. Teología Evang. Contemp. y Pastor ALEX DONNELLY?'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

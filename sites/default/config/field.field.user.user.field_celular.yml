@@ -1,0 +1,21 @@
+uuid: b7e1562b-f55f-4b82-81e5-51278532065f
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_celular
+  module:
+    - telephone
+    - user
+id: user.user.field_celular
+field_name: field_celular
+entity_type: user
+bundle: user
+label: 'Celular (WhatsApp)'
+description: 'Sin espacios por ejemplo 988555222'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone
