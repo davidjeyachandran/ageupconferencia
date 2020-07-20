@@ -1,0 +1,36 @@
+uuid: e517865c-d0c5-45ce-9229-a182979ee61e
+langcode: es
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_taller_1
+field_name: field_taller_1
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Misión cristiana y medios virtuales'
+      label: 'Misión cristiana y medios virtuales'
+    -
+      value: 'Corrupción Ministerial'
+      label: 'Corrupción Ministerial'
+    -
+      value: 'Finanzas personales inteligentes'
+      label: 'Finanzas personales inteligentes'
+    -
+      value: 'Levantamiento y ejecución de fondos en una CBU'
+      label: 'Levantamiento y ejecución de fondos en una CBU'
+    -
+      value: 'Violencia familiar'
+      label: 'Violencia familiar'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

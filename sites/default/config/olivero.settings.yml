@@ -1,0 +1,14 @@
+features:
+  node_user_picture: true
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+logo:
+  use_default: false
+  path: 'public://ageup-logo.png'
+favicon:
+  use_default: true
+mobile_menu_all_widths: 0
+site_branding_bg_color: gray
+debug: 0
+langcode: es

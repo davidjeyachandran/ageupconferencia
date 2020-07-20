@@ -1,0 +1,20 @@
+uuid: 1286e5bd-ed63-4a8d-8892-7dae2ef078ad
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_carrera
+  module:
+    - user
+id: user.user.field_carrera
+field_name: field_carrera
+entity_type: user
+bundle: user
+label: Carrera
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

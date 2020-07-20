@@ -1,0 +1,51 @@
+uuid: 4fcca171-4366-4299-bade-8e9134b69c56
+langcode: es
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_cargo
+field_name: field_cargo
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Miembro
+      label: Miembro
+    -
+      value: Egresado
+      label: Egresado
+    -
+      value: Presidente/a
+      label: Presidente/a
+    -
+      value: Secretario/a
+      label: Secretario/a
+    -
+      value: Tesorero/a
+      label: Tesorero/a
+    -
+      value: 'Director Local'
+      label: 'Obrero Local'
+    -
+      value: 'Director Asociado'
+      label: 'Obrero Asociado'
+    -
+      value: 'Asesor Local'
+      label: 'Asesor Local'
+    -
+      value: 'Director Regional'
+      label: 'Obrero Regional'
+    -
+      value: Otro
+      label: Otro
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

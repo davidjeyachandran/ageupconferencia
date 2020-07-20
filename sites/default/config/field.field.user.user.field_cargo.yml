@@ -1,0 +1,21 @@
+uuid: d36e41d6-a05f-477b-a0c3-4626ad8ca212
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_cargo
+  module:
+    - options
+    - user
+id: user.user.field_cargo
+field_name: field_cargo
+entity_type: user
+bundle: user
+label: '¿Qué cargo ocupa en su base?'
+description: 'Hay una opción para egresados, visitantes (Otra) y varios opciones para estudiantes'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

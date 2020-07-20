@@ -1,0 +1,20 @@
+uuid: bff29489-b883-4d6b-ae4d-c4d2175da1d7
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - olivero
+id: enlacesdeayudaalanavegacion
+theme: olivero
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: 'Enlaces de ayuda a la navegación'
+  provider: system
+  label_display: '0'
+visibility: {  }

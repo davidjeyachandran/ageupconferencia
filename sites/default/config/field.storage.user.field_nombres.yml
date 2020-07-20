@@ -1,0 +1,21 @@
+uuid: a8a47fa8-dd04-42a0-9985-96348195dbd4
+langcode: es
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_nombres
+field_name: field_nombres
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

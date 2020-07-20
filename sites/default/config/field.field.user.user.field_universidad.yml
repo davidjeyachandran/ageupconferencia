@@ -1,0 +1,30 @@
+uuid: 976fa8aa-a142-4f94-8e21-0a1e3353d96b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_universidad
+    - taxonomy.vocabulary.bases
+  module:
+    - user
+id: user.user.field_universidad
+field_name: field_universidad
+entity_type: user
+bundle: user
+label: '¿A qué base pertenece?'
+description: 'Por ejemplo "UNSAAC Cusco". Empieza con tu universidad.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      bases: bases
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

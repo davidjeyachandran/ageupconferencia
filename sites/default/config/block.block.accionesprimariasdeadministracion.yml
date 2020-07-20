@@ -1,0 +1,18 @@
+uuid: 81c7f8c9-8300-41b1-b4e0-804f8f373266
+langcode: es
+status: true
+dependencies:
+  theme:
+    - olivero
+id: accionesprimariasdeadministracion
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Acciones primarias de administración'
+  provider: core
+  label_display: '0'
+visibility: {  }

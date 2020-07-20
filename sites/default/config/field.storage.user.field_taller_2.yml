@@ -1,0 +1,36 @@
+uuid: 0d6a2db8-ff84-443b-b4b4-79e44ec29e70
+langcode: es
+status: true
+dependencies:
+  module:
+    - options
+    - user
+id: user.field_taller_2
+field_name: field_taller_2
+entity_type: user
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'La Acción social y la Obra estudiantil'
+      label: 'La Acción social y la Obra estudiantil'
+    -
+      value: '¿Qué haremos con el medio ambiente luego del COVID-19?'
+      label: '¿Qué haremos con el medio ambiente luego del COVID-19?'
+    -
+      value: 'Cuidado de la salud del estudiante, en la educación a distancia'
+      label: 'Cuidado de la salud del estudiante, en la educación a distancia'
+    -
+      value: 'Como formar a mi sucesor en el liderazgo'
+      label: 'Como formar a mi sucesor en el liderazgo'
+    -
+      value: 'Amores altamente peligrosos'
+      label: 'Amores altamente peligrosos'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

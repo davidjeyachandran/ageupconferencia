@@ -1,0 +1,23 @@
+uuid: eee7b325-0607-46b2-aaae-f8b498496b0a
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.taller
+  module:
+    - text
+id: node.taller.body
+field_name: body
+entity_type: node
+bundle: taller
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary
