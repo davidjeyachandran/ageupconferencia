@@ -1,0 +1,9 @@
+uuid: 0d4ba7e9-bc66-4ba2-bebb-6f2e2475b746
+langcode: es
+status: true
+dependencies: {  }
+id: equipo
+label: Equipo
+weight: 3
+is_admin: null
+permissions: {  }

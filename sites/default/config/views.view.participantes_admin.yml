@@ -1,25 +1,21 @@
-uuid: 4ed72fdb-d290-4ff9-b5c9-43a36e618f59
+uuid: 57743115-7a7c-4a89-8980-335b4fa57ee2
 langcode: es
 status: true
 dependencies:
   config:
-    - field.storage.user.field_cargo
-    - field.storage.user.field_carrera
+    - field.storage.user.field_celular
     - field.storage.user.field_nombres
+    - field.storage.user.field_taller_1
+    - field.storage.user.field_taller_2
     - field.storage.user.field_universidad
-    - field.storage.user.user_picture
-    - image.style.square
-    - system.menu.main
-    - taxonomy.vocabulary.bases
-    - user.role.authenticated
+    - user.role.administrator
+    - user.role.equipo
   module:
-    - better_exposed_filters
-    - image
     - options
-    - taxonomy
+    - telephone
     - user
-id: participantes
-label: Participantes
+id: participantes_admin
+label: Participantes-Admin
 module: views
 description: ''
 tag: ''
@@ -36,7 +32,8 @@ display:
         type: role
         options:
           role:
-            authenticated: authenticated
+            administrator: administrator
+            equipo: equipo
       cache:
         type: tag
         options: {  }
@@ -49,7 +46,7 @@ display:
           query_comment: ''
           query_tags: {  }
       exposed_form:
-        type: bef
+        type: basic
         options:
           submit_button: Aplicar
           reset_button: false
@@ -58,36 +55,13 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
-          text_input_required: 'Seleccione cualquier filtro y pulse Aplicar para ver los resultados'
-          text_input_required_format: basic_html
-          bef:
-            general:
-              autosubmit: true
-              autosubmit_exclude_textfield: false
-              autosubmit_textfield_delay: 500
-              autosubmit_hide: true
-              input_required: false
-              allow_secondary: false
-              secondary_label: 'Opciones avanzadas'
-              secondary_open: false
-            filter:
-              field_universidad_target_id:
-                plugin_id: default
-                advanced:
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
       pager:
         type: mini
         options:
-          items_per_page: 30
+          items_per_page: 100
           offset: 0
           id: 0
           total_pages: null
-          tags:
-            previous: ‹‹
-            next: ››
           expose:
             items_per_page: false
             items_per_page_label: 'Elementos por página'
@@ -96,17 +70,64 @@ display:
             items_per_page_options_all_label: '- Todo -'
             offset: false
             offset_label: Desplazamiento
+          tags:
+            previous: ‹‹
+            next: ››
       style:
-        type: grid
+        type: table
         options:
           grouping: {  }
-          columns: 4
-          automatic_width: true
-          alignment: horizontal
-          col_class_default: true
-          col_class_custom: ''
-          row_class_default: true
-          row_class_custom: ''
+          row_class: ''
+          default_row_class: true
+          override: true
+          sticky: false
+          caption: ''
+          summary: ''
+          description: ''
+          columns:
+            field_nombres: field_nombres
+            name: name
+            field_celular: field_celular
+            field_taller_1: field_taller_1
+            field_taller_2: field_taller_2
+          info:
+            field_nombres:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            name:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_celular:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_taller_1:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_taller_2:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          default: '-1'
+          empty_table: false
       row:
         type: fields
       fields:
@@ -117,8 +138,8 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
-          exclude: true
+          label: Nombres
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -146,7 +167,7 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: h3
+          element_type: ''
           element_class: ''
           element_label_type: ''
           element_label_class: ''
@@ -180,11 +201,11 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
+          label: Apellidos
           exclude: false
           alter:
-            alter_text: true
-            text: '{{ field_nombres }} {{ name }}'
+            alter_text: false
+            text: ''
             make_link: false
             path: ''
             absolute: false
@@ -209,11 +230,11 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: h3
+          element_type: ''
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -238,14 +259,14 @@ display:
           entity_type: user
           entity_field: name
           plugin_id: field
-        field_carrera:
-          id: field_carrera
-          table: user__field_carrera
-          field: field_carrera
+        field_celular:
+          id: field_celular
+          table: user__field_celular
+          field: field_celular
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
+          label: Celular
           exclude: false
           alter:
             alter_text: false
@@ -287,9 +308,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: string
+          type: telephone_link
           settings:
-            link_to_entity: false
+            title: ''
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -301,141 +322,14 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
-        user_picture:
-          id: user_picture
-          table: user__user_picture
-          field: user_picture
+        field_taller_1:
+          id: field_taller_1
+          table: user__field_taller_1
+          field: field_taller_1
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: image
-          settings:
-            image_style: square
-            image_link: ''
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_universidad:
-          id: field_universidad
-          table: user__field_universidad
-          field: field_universidad
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_cargo:
-          id: field_cargo
-          table: user__field_cargo
-          field: field_cargo
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
+          label: 'Taller 1'
           exclude: false
           alter:
             alter_text: false
@@ -490,6 +384,131 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: field
+        field_taller_2:
+          id: field_taller_2
+          table: user__field_taller_2
+          field: field_taller_2
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Taller 2'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_universidad:
+          id: field_universidad
+          table: user__field_universidad
+          field: field_universidad
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Base
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
       filters:
         status:
           value: '1'
@@ -504,147 +523,27 @@ display:
             operator_limit_selection: false
             operator_list: {  }
           group: 1
-        uid_raw:
-          id: uid_raw
-          table: users_field_data
-          field: uid_raw
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '!='
-          value:
-            min: ''
-            max: ''
-            value: '1'
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          entity_type: user
-          plugin_id: numeric
-        field_universidad_target_id:
-          id: field_universidad_target_id
-          table: user__field_universidad
-          field: field_universidad_target_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_universidad_target_id_op
-            label: Base
-            description: ''
-            use_operator: false
-            operator: field_universidad_target_id_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_universidad_target_id
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          type: select
-          limit: true
-          vid: bases
-          hierarchy: false
-          error_message: true
-          plugin_id: taxonomy_index_tid
-      sorts:
-        field_nombres_value:
-          id: field_nombres_value
-          table: user__field_nombres
-          field: field_nombres_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          plugin_id: standard
-      title: Participantes
-      header:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          tokenize: false
-          content:
-            value: 'Número de participantes: <h3>[view:total-rows]</h3>'
-            format: full_html
-          plugin_id: text
+      sorts: {  }
+      title: Participantes-Admin
+      header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
-      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
-        - user
         - user.roles
       tags:
-        - 'config:field.storage.user.field_cargo'
-        - 'config:field.storage.user.field_carrera'
+        - 'config:field.storage.user.field_celular'
         - 'config:field.storage.user.field_nombres'
+        - 'config:field.storage.user.field_taller_1'
+        - 'config:field.storage.user.field_taller_2'
         - 'config:field.storage.user.field_universidad'
-        - 'config:field.storage.user.user_picture'
   page_1:
     display_plugin: page
     id: page_1
@@ -652,28 +551,17 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: participantes
-      menu:
-        type: normal
-        title: Participantes
-        description: ''
-        expanded: false
-        parent: ''
-        weight: 0
-        context: '0'
-        menu_name: main
+      path: participantes-admin
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
-        - user
         - user.roles
       tags:
-        - 'config:field.storage.user.field_cargo'
-        - 'config:field.storage.user.field_carrera'
+        - 'config:field.storage.user.field_celular'
         - 'config:field.storage.user.field_nombres'
+        - 'config:field.storage.user.field_taller_1'
+        - 'config:field.storage.user.field_taller_2'
         - 'config:field.storage.user.field_universidad'
-        - 'config:field.storage.user.user_picture'

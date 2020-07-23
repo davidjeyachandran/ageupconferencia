@@ -1,0 +1,14 @@
+uuid: b2cebf28-1b8c-4564-8b03-333f57981d3f
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.equipo
+  module:
+    - user
+id: user_add_role_action.equipo
+label: 'Añade el rol Equipo al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: equipo
