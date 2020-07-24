@@ -6,4 +6,6 @@ id: equipo
 label: Equipo
 weight: 3
 is_admin: null
-permissions: {  }
+permissions:
+  - 'access user profiles'
+  - 'change own username'
